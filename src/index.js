@@ -8,6 +8,8 @@ const conf = require("./env/env.js")
 
 const { connect } = require("../database/db.js")
 
+const indexRouter = require("./router/indexRoutes.js")
+
 const app = express();
 
 conf()
@@ -26,7 +28,9 @@ app.set("views", path.join(__dirname, "views"))
 
 app.set("view engine", "ejs")
 
-app.use("files/", express.static(path.join(__dirname, "public")))
+app.use("/files", express.static(path.join(__dirname, "public")))
+
+app.use(indexRouter)
 
 app.set("port", process.env.PORT)
 
