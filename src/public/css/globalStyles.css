@@ -1,0 +1,43 @@
+/*Goblal StyleSheets (Variables & Basic Styles)*/
+
+@charset "UTF-8";
+
+:root {
+    /* ColorHunt: https://colorhunt.co/palette/181823537fe7c0eef2e9f8f9 */
+    --bk: #181823; /*Black*/
+    --pr: #537FE7; /*Purple*/
+    --cnmdlght: #C0EEF2; /*Cyan Medium Light*/
+    --cnlght: #E9F8F9; /*Cyan Light*/
+    /* Quicksand (Google Fonts): https://fonts.google.com/specimen/Quicksand */           
+    --quicksandFont: "Quicksand", sans-serif; /*Quicksand Font*/
+    /* Tilt Neon (Google Fonts): https://fonts.google.com/specimen/Tilt+Neon */
+    --tiltNeonFont: 'Tilt Neon', cursive; /*Tilt Neon Font*/
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--bk);
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
