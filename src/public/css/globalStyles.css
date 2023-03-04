@@ -26,6 +26,7 @@ body {
     height: 100%;
     overflow: hidden;
     background-color: var(--bk);
+    font-family: var(--tiltNeonFont);
 }
 
 ul,
