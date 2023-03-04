@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title><%= title %> | Sign In</title>
     <%- include("partials/head") %>
 </head>
 <body>
     <div class="container">
         <%- include("partials/navBar") %>
     </div>
+    <% if(alert) { %>
+        <script>
+            Swal.fire(
+                {
+                    title: '<%= alertTitle %>',
+                    text: '<%= alertMessage %>',
+                    imageUrl: '<%= imageUrl %>',
+                    imageHeight: 512,
+                    imageAlt: 'Alert icon',
+                    background: 'var(--bk)',
+                    color: 'var(--pr)',
+                    showConfirmButton: <%= showConfirmButton %>,
+                    timer: <%= timer  %>,
+                }
+            ).then(() => {
+                window.location = '<%= route %>'
+            })
+        </script>
+    <% } %>
 </body>
 </html>

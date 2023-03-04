@@ -10,6 +10,8 @@ const { connect } = require("../database/db.js")
 
 const indexRouter = require("./router/indexRoutes.js")
 
+const request = require("./router/request.js")
+
 const app = express();
 
 conf()
@@ -29,6 +31,8 @@ app.set("views", path.join(__dirname, "views"))
 app.set("view engine", "ejs")
 
 app.use("/files", express.static(path.join(__dirname, "public")))
+
+app.use(request)
 
 app.use(indexRouter)
 

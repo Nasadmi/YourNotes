@@ -4,12 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title><%= title %> | Sign Up</title>
     <%- include("partials/head") %>
+    <link rel="stylesheet" href="/files/css/register.css">
 </head>
 <body>
     <div class="container">
         <%- include("partials/navBar") %>
+        <div class="title-content">
+            <h1>
+                Sign Up
+            </h1>
+        </div>
+        <div class="content">
+            <form action="/register" method="post">
+                <div class="flex-form">
+                    <div class="formLabel">
+                        <label for="username" class="top">
+                            <h2>Username</h2>
+                            <input type="text" name="username" id="username" required>
+                        </label>
+                        <label for="email" class="top">
+                            <h2>Email</h2>
+                            <input type="email" name="email" id="email" required>
+                        </label>
+                        <label for="password" class="top">
+                            <h2>Password</h2>
+                            <input type="password" name="password" id="password" minlength="8" required>
+                        </label>
+                    </div>
+                    <button class="btn-form">
+                        <h1>
+                            <i class="fa-solid fa-user-plus"></i>
+                        </h1>
+                    </button>
+                </div>
+            </form>
+        </div>
+    <% if(alert) { %>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire(
+                {
+                    title: '<%= alertTitle %>',
+                    html: '<%= alertMessage %>',
+                    imageUrl: '<%= imageUrl %>',
+                    imageHeight: 256,
+                    imageAlt: 'Alert icon',
+                    background: 'var(--bk)',
+                    color: 'var(--pr)',
+                    showConfirmButton: <%= showConfirmButton %>,
+                    timer: <%= timer  %>,
+                }
+            ).then(() => {
+                window.location = '<%= route %>'
+            })
+        </script>
+    <% } %>
     </div>
 </body>
 </html>
